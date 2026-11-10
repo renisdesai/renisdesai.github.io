@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Renis Desai</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Renis Desai: enterprise AI and digital transformation executive with 25+ years turning emerging technology into measurable business results.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
+<style>
+/* Layout: editorial report. Sticky name bar, a two-column hero (statement + portrait),
+   then alternating canvas/white bands: metrics, about, experience timeline, case-study cards, fit, contact.
+   Palette is the "Executive Tech" light palette (60/30/10) — deliberately light-only. */
+:root {
+  color-scheme: light;
+  --canvas: #F8F9FA;      /* 60% main background */
+  --white: #FFFFFF;       /* 60% alternate section */
+  --ink: #0B132B;         /* 30% text + headers */
+  --slate: #F4F6F9;       /* 30% cards */
+  --rule: #E2E8F0;        /* structural lines */
+  --muted: #4A5468;       /* secondary text, ink-tinted */
+  --accent: #4361EE;      /* 10% CTAs + links only */
+  --accent-ink: #2F49C9;  /* accent hover */
+  --font-display: "Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --step--1: 0.8125rem;
+  --step-0: 1rem;
+  --step-1: 1.125rem;
+  --step-2: 1.375rem;
+  --step-3: clamp(1.625rem, 1.2rem + 1.8vw, 2.25rem);
+  --step-4: clamp(2.1rem, 1.4rem + 3.2vw, 3.4rem);
+  --maxw: 1080px;
+  --gutter-l: max(20px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(20px, env(safe-area-inset-right, 0px));
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--white);
+}
+h1, h2, h3 { font-family: var(--font-display); color: var(--ink); text-wrap: balance; margin: 0; }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:hover { color: var(--accent-ink); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+.wrap {
+  max-width: var(--maxw); margin: 0 auto;
+  padding-left: var(--gutter-l); padding-right: var(--gutter-r);
+}
+.band { padding-block: clamp(56px, 8vw, 96px); }
+.band.white { background: var(--white); border-block: 1px solid var(--rule); }
+
+.eyebrow {
+  font-size: var(--step--1); font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--muted);
+}
+.section-head { display: grid; gap: 10px; margin-bottom: clamp(28px, 4vw, 44px); max-width: 62ch; }
+.section-head h2 { font-size: var(--step-3); font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; }
+.section-head p { color: var(--muted); }
+
+/* Header */
+.site-header {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: color-mix(in srgb, var(--white) 92%, transparent);
+  backdrop-filter: saturate(1.4) blur(8px);
+  -webkit-backdrop-filter: saturate(1.4) blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+.site-header .wrap {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding-block: 14px;
+}
+.brand { font-family: var(--font-display); font-weight: 800; font-size: var(--step-1); color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+.brand:hover { color: var(--ink); }
+.nav { display: flex; align-items: center; gap: 26px; }
+.nav a.link { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 0.9375rem; }
+.nav a.link:hover { color: var(--accent); }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font-body); font-weight: 600; font-size: 0.9375rem;
+  padding: 11px 20px; border-radius: 6px; text-decoration: none; cursor: pointer;
+  border: 1.5px solid var(--accent); line-height: 1.2;
+}
+.btn-primary { background: var(--accent); color: var(--white); }
+.btn-primary:hover { background: var(--accent-ink); border-color: var(--accent-ink); color: var(--white); }
+.btn-quiet { background: transparent; color: var(--ink); border-color: var(--rule); }
+.btn-quiet:hover { border-color: var(--ink); color: var(--ink); }
+.btn-sm { padding: 8px 16px; font-size: 0.875rem; }
+
+/* Hero */
+.hero { padding-block: clamp(48px, 7vw, 88px) clamp(40px, 6vw, 72px); }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 64px); align-items: center; }
+.hero-copy { display: grid; gap: 22px; min-width: 0; }
+.hero h1 { font-size: var(--step-4); font-weight: 800; line-height: 1.08; letter-spacing: -0.025em; }
+.hero .lede { font-size: var(--step-1); color: var(--muted); max-width: 54ch; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; padding-top: 4px; }
+.portrait { margin: 0; justify-self: end; width: 100%; max-width: 380px; }
+.portrait img {
+  display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover;
+  border-radius: 10px; border: 1px solid var(--rule);
+  box-shadow: 0 24px 48px -28px rgba(11, 19, 43, 0.45);
+}
+.portrait figcaption { margin-top: 12px; font-size: var(--step--1); color: var(--muted); }
+
+/* Metrics */
+.metrics {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+}
+.metric { padding: 26px 20px 24px 0; display: grid; gap: 6px; align-content: start; }
+.metric + .metric { padding-left: 22px; border-left: 1px solid var(--rule); }
+.metric .num {
+  font-family: var(--font-display); font-weight: 800; color: var(--ink);
+  font-size: clamp(2rem, 1.5rem + 1.6vw, 2.75rem); line-height: 1; letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.metric .label { font-size: 0.9rem; color: var(--muted); line-height: 1.45; }
+
+/* About */
+.about-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 64px); }
+.about-copy { display: grid; gap: 18px; font-size: var(--step-1); line-height: 1.65; max-width: 62ch; min-width: 0; }
+.about-copy strong { font-weight: 600; }
+.side-list { display: grid; gap: 28px; align-content: start; min-width: 0; }
+.side-list h3 { font-size: var(--step--1); font-family: var(--font-body); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.tags li { background: var(--slate); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; font-size: 0.875rem; font-weight: 500; }
+.value-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.value-list li { padding-left: 18px; position: relative; }
+.value-list li::before { content: ""; position: absolute; left: 0; top: 0.68em; width: 8px; height: 2px; background: var(--ink); }
+
+/* Experience timeline */
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; }
+.role {
+  display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 28px;
+  padding-block: 30px; border-top: 1px solid var(--rule);
+}
+.role:last-child { border-bottom: 1px solid var(--rule); }
+.role-meta { display: grid; gap: 4px; align-content: start; }
+.role-meta .org { font-family: var(--font-display); font-weight: 700; font-size: var(--step-1); }
+.role-meta .where { font-size: 0.875rem; color: var(--muted); }
+.role-body { display: grid; gap: 22px; min-width: 0; }
+.position { display: grid; gap: 10px; }
+.position-title { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; }
+.position-title h3 { font-size: var(--step-1); font-weight: 700; }
+.position-title .dates { font-size: 0.875rem; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.position ul { margin: 0; padding-left: 1.1em; display: grid; gap: 7px; color: var(--ink); }
+.position li::marker { color: var(--muted); }
+.edu {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 32px;
+}
+.edu div { background: var(--slate); border: 1px solid var(--rule); border-radius: 8px; padding: 18px 20px; display: grid; gap: 2px; }
+.edu .deg { font-weight: 600; }
+.edu .school { font-size: 0.9rem; color: var(--muted); }
+
+/* Work cards */
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.card {
+  background: var(--slate); border: 1px solid var(--rule); border-radius: 10px;
+  padding: clamp(22px, 3vw, 30px); display: grid; gap: 14px; align-content: start; min-width: 0;
+}
+.card .context { font-size: var(--step--1); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.card h3 { font-size: var(--step-2); font-weight: 700; line-height: 1.25; letter-spacing: -0.01em; }
+.card p { color: var(--ink); }
+.card .how { color: var(--muted); font-size: 0.95rem; }
+.card-stats { display: flex; flex-wrap: wrap; gap: 10px 28px; padding-top: 14px; border-top: 1px solid var(--rule); margin-top: 4px; }
+.stat { display: grid; gap: 2px; }
+.stat b { font-family: var(--font-display); font-weight: 800; font-size: 1.6rem; line-height: 1.1; color: var(--ink); font-variant-numeric: tabular-nums; }
+.stat span { font-size: 0.8125rem; color: var(--muted); line-height: 1.35; max-width: 18ch; }
+
+/* Fit */
+.fit { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--ink); }
+.fit div { padding: 22px 22px 6px 0; display: grid; gap: 6px; align-content: start; }
+.fit div + div { padding-left: 22px; border-left: 1px solid var(--rule); }
+.fit h3 { font-size: var(--step-1); font-weight: 700; }
+.fit p { color: var(--muted); font-size: 0.95rem; }
+
+/* Contact */
+.contact { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: start; }
+.contact h2 { font-size: var(--step-4); font-weight: 800; letter-spacing: -0.025em; line-height: 1.08; }
+.contact-copy { display: grid; gap: 16px; min-width: 0; }
+.contact-copy p { color: var(--muted); font-size: var(--step-1); max-width: 48ch; }
+.channels { display: grid; gap: 14px; min-width: 0; }
+.channel {
+  background: var(--white); border: 1px solid var(--rule); border-radius: 10px;
+  padding: 18px 20px; display: grid; gap: 10px;
+}
+.channel .k { font-size: var(--step--1); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.channel .v { font-size: var(--step-1); font-weight: 600; color: var(--ink); overflow-wrap: anywhere; user-select: all; }
+.channel .row { display: flex; flex-wrap: wrap; gap: 10px; }
+.copy-status { font-size: 0.8125rem; color: var(--muted); min-height: 1.2em; }
+
+.site-footer { padding-block: 28px; border-top: 1px solid var(--rule); background: var(--white); }
+.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 0.875rem; color: var(--muted); }
+
+/* Responsive */
+@media (max-width: 1060px) {
+  .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .metric:nth-child(3) { padding-left: 0; border-left: 0; }
+  .metric:nth-child(n+3) { border-top: 1px solid var(--rule); }
+}
+@media (max-width: 900px) {
+  .fit { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fit div:nth-child(3) { padding-left: 0; border-left: 0; }
+  .about-grid, .contact { grid-template-columns: minmax(0, 1fr); }
+  .role { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+}
+@media (max-width: 720px) {
+  .hero .wrap { grid-template-columns: minmax(0, 1fr); }
+  .portrait { justify-self: start; max-width: 200px; order: -1; }
+  .portrait figcaption { display: none; }
+  .cards { grid-template-columns: minmax(0, 1fr); }
+  .edu { grid-template-columns: minmax(0, 1fr); }
+  .nav a.link { display: none; }
+}
+@media (max-width: 440px) {
+  .metric { padding-right: 12px; }
+  .metric + .metric { padding-left: 14px; }
+  .metric:nth-child(3) { padding-left: 0; }
+  .fit { grid-template-columns: minmax(0, 1fr); }
+  .fit div, .fit div + div { padding-left: 0; border-left: 0; padding-right: 0; }
+  .fit div + div { border-top: 1px solid var(--rule); }
+  .hero-actions .btn { flex: 1 1 auto; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top">Renis Desai</a>
+    <nav class="nav" aria-label="Sections">
+      <a class="link" href="#about">About</a>
+      <a class="link" href="#experience">Experience</a>
+      <a class="link" href="#work">Work</a>
+      <a class="btn btn-primary btn-sm" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">Enterprise AI &amp; Digital Transformation Executive</p>
+        <h1 id="hero-title">I turn emerging technology into measurable business results.</h1>
+        <p class="lede">25+ years leading digital, eCommerce, and innovation across insurance, hospitality, and retail. I tie innovation investment to financial outcomes and lead the change that gets technology actually used.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Get in touch</a>
+          <a class="btn btn-quiet" href="#work">See my work</a>
+        </div>
+      </div>
+      <figure class="portrait">
+        <img src="headshot.jpg" alt="Portrait of Renis Desai" width="800" height="800">
+        <figcaption>Columbus, Ohio</figcaption>
+      </figure>
+    </div>
+    <div class="wrap">
+      <div class="metrics" role="list" style="margin-top: clamp(40px, 6vw, 64px);">
+        <div class="metric" role="listitem"><span class="num">25+</span><span class="label">years leading digital and innovation in three industries</span></div>
+        <div class="metric" role="listitem"><span class="num">1,200+</span><span class="label">associates moved from AI pilot to enterprise-wide adoption</span></div>
+        <div class="metric" role="listitem"><span class="num">25%</span><span class="label">revenue growth in a $125M digital commerce channel</span></div>
+        <div class="metric" role="listitem"><span class="num">$5.7M</span><span class="label">annual incremental revenue from one product page redesign</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band white" id="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">About me</p>
+        <h2 id="about-title">A business leader who speaks technology fluently</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>I've spent my career at the point where business strategy meets technology. My work starts with the customer journey: understanding where it breaks down, then using technology to grow top-line revenue or take cost out of operations.</p>
+          <p><strong>Three times, an organization created a new role for me to lead</strong>: digital commerce at a national restaurant brand, then digital and later enterprise AI at a regional insurer. Each time the job was to build something that didn't exist yet and prove it was worth the investment.</p>
+          <p>I lead as a servant leader. I set strategic direction for cross-functional teams, and I stay hands-on with them through execution and delivery. Most recently I built an insurer's enterprise AI strategy, governance, and adoption program from the ground up, putting people and trust ahead of tools.</p>
+        </div>
+        <div class="side-list">
+          <div>
+            <h3>Core competencies</h3>
+            <ul class="tags">
+              <li>AI Strategy &amp; Governance</li>
+              <li>Digital Transformation &amp; Innovation</li>
+              <li>Enterprise Knowledge Management</li>
+              <li>Agile Product Development</li>
+              <li>Change Leadership</li>
+              <li>UX &amp; Design Thinking</li>
+            </ul>
+          </div>
+          <div>
+            <h3>What I bring</h3>
+            <ul class="value-list">
+              <li>Customer focus that drives business results</li>
+              <li>Business and technical strategic leadership</li>
+              <li>Teams that execute and deliver</li>
+              <li>Trusted relationships from working teams to the executive suite</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="experience" aria-labelledby="exp-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">My experience</p>
+        <h2 id="exp-title">Twenty-five years of building what comes next</h2>
+      </div>
+      <ol class="timeline">
+        <li class="role">
+          <div class="role-meta"><span class="org">Grange Insurance</span><span class="where">Columbus, OH · Property &amp; casualty insurer</span></div>
+          <div class="role-body">
+            <div class="position">
+              <div class="position-title"><h3>Director of Innovation</h3><span class="dates">2024 – 2026</span></div>
+              <ul>
+                <li>Led the enterprise AI strategy from pilot to full-scale adoption across 1,200+ associates.</li>
+                <li>Helped shape and lead the AI Steering Committee, uniting 9 functions including Legal, Security, Technology, and HR around Governance, Literacy, and Adoption.</li>
+                <li>Built an 80-use-case AI roadmap and ran 13 proofs of concept across call center intelligence, customer relationship automation, and knowledge management.</li>
+                <li>Launched a monthly AI productivity dashboard for executive leadership.</li>
+              </ul>
+            </div>
+            <div class="position">
+              <div class="position-title"><h3>Assistant Vice President of Digital</h3><span class="dates">2018 – 2023</span></div>
+              <ul>
+                <li>Directed digital strategy and roadmap to modernize the customer and independent agent experience.</li>
+                <li>Raised agent quote completion to 70%, generating $1.47M in new business.</li>
+                <li>Cut billing-related call costs 20%+, saving $480K+ a year, and reduced the digital program budget from $3.4M to $1.73M.</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="role">
+          <div class="role-meta"><span class="org">Bob Evans Restaurants</span><span class="where">New Albany, OH · National restaurant brand</span></div>
+          <div class="role-body">
+            <div class="position">
+              <div class="position-title"><h3>Director of Digital Commerce</h3><span class="dates">2014 – 2018</span></div>
+              <ul>
+                <li>Grew revenue 25% and conversion 30% in a $125M omni-channel digital business.</li>
+                <li>Pioneered voice ordering on Amazon Alexa and Google Home.</li>
+                <li>Implemented a responsive eCommerce platform and ran agile delivery based on customer insight and usability testing.</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="role">
+          <div class="role-meta"><span class="org">Victoria's Secret Direct</span><span class="where">Columbus, OH · Specialty retail</span></div>
+          <div class="role-body">
+            <div class="position">
+              <div class="position-title"><h3>Manager of eCommerce Optimization</h3><span class="dates">2012 – 2014</span></div>
+              <ul>
+                <li>Managed a $32M website re-platform.</li>
+                <li>Delivered a product page overhaul worth $5.7M in annual incremental revenue, and introduced agile delivery to the team.</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="role">
+          <div class="role-meta"><span class="org">American Signature Inc.</span><span class="where">Columbus, OH · Furniture retail</span></div>
+          <div class="role-body">
+            <div class="position">
+              <div class="position-title"><h3>Digital Marketing Manager</h3><span class="dates">2010 – 2012</span></div>
+              <ul><li>Led digital marketing across web, mobile, email, social, SEO, and SEM.</li></ul>
+            </div>
+            <div class="position">
+              <div class="position-title"><h3>Application Development Manager</h3><span class="dates">2002 – 2010</span></div>
+              <ul><li>Launched online consumer credit, generating $3M in incremental annual revenue.</li></ul>
+            </div>
+          </div>
+        </li>
+      </ol>
+      <div class="edu">
+        <div><span class="deg">MBA</span><span class="school">The Ohio State University</span></div>
+        <div><span class="deg">BA, Biological Sciences</span><span class="school">Ohio University</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band white" id="work" aria-labelledby="work-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Work I'm proud of</p>
+        <h2 id="work-title">Results that outlasted the project</h2>
+        <p>A few efforts where the outcome mattered more than the technology behind it.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <p class="context">Enterprise AI · Insurance</p>
+          <h3>Taking AI from pilot to everyday use</h3>
+          <p>The company was investing in AI across the enterprise and needed its strategy, guardrails, and adoption plan put into practice at scale.</p>
+          <p class="how">I helped shape and lead the AI Steering Committee across nine functions to make AI practical and effective for the whole organization. I helped implement and scale the strategy built on Governance, Literacy, and Adoption, and led the move to an AI-powered knowledge platform that brought 30+ internal sites into one place.</p>
+          <div class="card-stats">
+            <div class="stat"><b>68%+</b><span>of associates using the AI platform</span></div>
+            <div class="stat"><b>9</b><span>functions aligned on responsible AI</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <p class="context">Change leadership</p>
+          <h3>Putting people ahead of the technology</h3>
+          <p>Before scaling AI further, the company needed to know what associates actually needed from it.</p>
+          <p class="how">I played a lead role in a series of five research studies with 900+ associates and turned the findings into clear insights. From those insights I built an action plan to drive adoption and improve the AI experience: make accuracy and trust a priority, and invest in change management and workflow redesign. I briefed the executive team and helped shape the direction of AI across the enterprise.</p>
+          <div class="card-stats">
+            <div class="stat"><b>900+</b><span>associates engaged, 75% of the workforce</span></div>
+            <div class="stat"><b>5</b><span>research studies</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <p class="context">AI literacy</p>
+          <h3>Teaching the company to start with the problem</h3>
+          <p>Teams were asking for AI tools before they had defined the problem to solve.</p>
+          <p class="how">With HR Training I built a problem-first program: frame the problem, map the process, then decide whether AI fits. I trained people leaders first, created self-serve training videos, and mentored a university student team that designed a three-part AI learning path.</p>
+          <div class="card-stats">
+            <div class="stat"><b>95%</b><span>of associates trained</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <p class="context">Platform strategy</p>
+          <h3>Choosing the right GenAI platform</h3>
+          <p>Leadership needed an objective answer on which enterprise AI platform to commit to.</p>
+          <p class="how">I ran an evaluation of six buy-and-build options, including ChatGPT Enterprise, Microsoft 365 Copilot, Glean, and custom builds. I then led the cross-functional migration to the selected platform, which went live company-wide with no major issues.</p>
+          <div class="card-stats">
+            <div class="stat"><b>6</b><span>platforms evaluated</span></div>
+            <div class="stat"><b>30+</b><span>knowledge sites unified</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <p class="context">Innovation operating model</p>
+          <h3>Making innovation measurable</h3>
+          <p>Innovation work was reported as activity, which made it hard for executives to judge its value.</p>
+          <p class="how">I built a pipeline of 80 prioritized use cases and an intake process for new ideas, and helped launch dedicated cross-functional delivery teams. I moved executive reporting from activity to business outcomes, using leading and lagging metrics, and partnered with InsurTech networks to source outside solutions.</p>
+          <div class="card-stats">
+            <div class="stat"><b>80</b><span>AI use cases prioritized</span></div>
+            <div class="stat"><b>13</b><span>proofs of concept</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <p class="context">Digital growth · Insurance</p>
+          <h3>Growing digital while cutting cost</h3>
+          <p>The independent agent quoting experience needed to convert better, and billing calls were costing $2.4M a year.</p>
+          <p class="how">My team rebuilt the agent quoting experience and added self-service billing, while I cut the digital program budget nearly in half through tighter prioritization.</p>
+          <div class="card-stats">
+            <div class="stat"><b>$1.47M</b><span>new business growth</span></div>
+            <div class="stat"><b>$480K+</b><span>saved per year</span></div>
+            <div class="stat"><b>49%</b><span>lower program budget</span></div>
+          </div>
+        </article>
+      </div>
+
+      <article class="card" style="margin-top: 20px; background: var(--canvas);">
+        <p class="context">Community leadership · Board Chair, 2024 – 2026</p>
+        <h3>Leading a nonprofit board through a record year</h3>
+        <p class="how">As Board Chair of the Westerville Area Resource Ministry, a faith-based food ministry, I guided the board through an executive director transition and a new strategic plan, and set the next year's strategy and budget before handing off the chair.</p>
+        <div class="card-stats">
+          <div class="stat"><b>$3.7M</b><span>total giving, 19% over budget</span></div>
+          <div class="stat"><b>78%</b><span>growth in new donors</span></div>
+          <div class="stat"><b>1,100+</b><span>weekend meal bags for students each week</span></div>
+          <div class="stat"><b>30+</b><span>neighbors placed in jobs</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="band" id="fit" aria-labelledby="fit-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">What I'm looking for</p>
+        <h2 id="fit-title">An executive role where I'm accountable for results</h2>
+      </div>
+      <div class="fit">
+        <div><h3>Future-focused</h3><p>A stable company with real growth ambitions.</p></div>
+        <div><h3>Technology in service of the business</h3><p>A partnership where technology meets real business needs.</p></div>
+        <div><h3>Leadership with ownership</h3><p>Leading teams aligned to strategy and owning the outcome.</p></div>
+        <div><h3>Collaborative culture</h3><p>A positive environment that values continuous improvement.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band white" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact">
+      <div class="contact-copy">
+        <p class="eyebrow">How to reach me</p>
+        <h2 id="contact-title">Let's talk about what you're building.</h2>
+        <p>I'm open to executive leadership roles in AI, digital transformation, and innovation. The quickest way to reach me is email or LinkedIn.</p>
+      </div>
+      <div class="channels">
+        <div class="channel">
+          <span class="k">Email</span>
+          <span class="v" id="email-text">renisdesai@gmail.com</span>
+          <div class="row">
+            <a class="btn btn-primary btn-sm" href="mailto:renisdesai@gmail.com">Send email</a>
+            <button class="btn btn-quiet btn-sm" type="button" id="copy-email">Copy address</button>
+          </div>
+          <span class="copy-status" id="copy-status" aria-live="polite"></span>
+        </div>
+        <div class="channel">
+          <span class="k">LinkedIn</span>
+          <span class="v">linkedin.com/in/renisdesai</span>
+          <div class="row">
+            <a class="btn btn-primary btn-sm" href="https://www.linkedin.com/in/renisdesai/" target="_blank" rel="noopener">View LinkedIn profile</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Renis Desai</span>
+    <span>Columbus, Ohio</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy-email');
+  var status = document.getElementById('copy-status');
+  var text = document.getElementById('email-text');
+  function selectText() {
+    var r = document.createRange(); r.selectNodeContents(text);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+  btn.addEventListener('click', function () {
+    var addr = text.textContent.trim();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(addr).then(function () {
+        status.textContent = 'Copied to clipboard.';
+      }).catch(function () {
+        selectText(); status.textContent = 'Address selected. Press Ctrl+C or ⌘C to copy.';
+      });
+    } else {
+      selectText(); status.textContent = 'Address selected. Press Ctrl+C or ⌘C to copy.';
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
